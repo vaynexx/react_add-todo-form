@@ -1,5 +1,4 @@
-import React from 'react';
-import { Todo } from '../../types/Todo';
+import { Todo } from '../../Types/todo';
 import { UserInfo } from '../UserInfo';
 
 type Props = {
@@ -7,12 +6,11 @@ type Props = {
 };
 
 export const TodoInfo: React.FC<Props> = ({ todo }) => (
-  <div
+  <article
     className={`TodoInfo ${todo.completed ? 'TodoInfo--completed' : ''}`}
     data-id={todo.id}
   >
-    <h3 className="TodoInfo__title">{todo.title}</h3>
-    <p>Status: {todo.completed ? 'Completed' : 'Not completed'}</p>
+    <h2 className="TodoInfo__title">{todo.title}</h2>
     {todo.user && <UserInfo user={todo.user} />}
-  </div>
+  </article>
 );

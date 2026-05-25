@@ -1,6 +1,6 @@
 {
   "name": "react_add-todo-form",
-  "homepage": "react_add-todo-form",
+  "homepage": "https://vaynexx.github.io/react_add-todo-form",
   "version": "0.1.0",
   "keywords": [],
   "author": "Mate Academy",
@@ -54,8 +54,7 @@
     "update": "mate-scripts update",
     "postinstall": "npm run update && cypress verify",
     "predeploy": "npm run build",
-    "deploy": "mate-scripts deploy"
-  },
+  "deploy": "set GH_PAGES_CACHE=C:\\ghpages-cache && gh-pages -d dist --no-history --dotfiles"  },
   "browserslist": {
     "production": [
       ">0.2%",

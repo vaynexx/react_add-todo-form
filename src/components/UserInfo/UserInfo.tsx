@@ -1,16 +1,17 @@
-import React from 'react';
-import { User } from '../../types/User';
+import { User } from '../../Types/user';
 
 type Props = {
   user: User;
 };
 
-export const UserInfo: React.FC<Props> = ({ user }) => (
-  <div className="UserInfo">
-    <p className="UserInfo__name">{user.name}</p>
-    <p className="UserInfo__username">{user.username}</p>
-    <a href={`mailto:${user.email}`} className="UserInfo__email">
-      {user.email}
+export const UserInfo: React.FC<Props> = ({ user }) => {
+  if (user === null) {
+    return null;
+  }
+
+  return (
+    <a className="UserInfo" href={`mailto:${user.email}`}>
+      {user.name}
     </a>
-  </div>
-);
+  );
+};
